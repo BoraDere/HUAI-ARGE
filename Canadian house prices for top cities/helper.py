@@ -15,3 +15,17 @@ for i in s.split("\n"):
 
 #=====================================================================================================================#
     
+import pandas as pd
+
+data = pd.read_csv('HouseListings-Top45Cities-10292023-kaggle.csv', encoding='latin1')
+df = pd.DataFrame(data)
+
+provinces = list(df['Province'].value_counts().index)
+
+for i in range(len(provinces)):
+    provinces[i] = 'Province_' + provinces[i]
+
+print(provinces)
+
+#=====================================================================================================================#
+
